@@ -92,3 +92,74 @@ const styles = StyleSheet.create({
 });
 
 export default SecondTabScreen;
+  const SecInput = useRef(null);
+  const thirdInput = useRef(null);
+  const fourthInput = useRef(null);
+  const fifthInput = useRef(null);
+
+  const focus = type => {
+    if (type == 'second') {
+      SecInput.current.focus();
+    } else if (type == 'third') {
+      thirdInput.current.focus();
+    } else if (type == 'fourth') {
+      fourthInput.current.focus();
+    } else if (type == 'fifth') {
+      fifthInput.current.focus();
+    }
+  };
+
+  <View
+          style={{
+            flexDirection: 'row',
+
+            width: wp(50),
+            justifyContent: 'space-around'
+          }}
+        >
+          <TextInput
+            keyboardType="decimal-pad"
+            autoFocus
+            onSubmitEditing={() => focus('second')}
+            returnKeyType="next"
+            blurOnSubmit={false}
+            maxLength={1}
+            style={{ borderBottomWidth: 1, textAlign: 'center' }}
+          />
+          <TextInput
+            keyboardType="decimal-pad"
+            ref={SecInput}
+            onSubmitEditing={() => focus('third')}
+            returnKeyType="next"
+            blurOnSubmit={false}
+            maxLength={1}
+            style={{ borderBottomWidth: 1, textAlign: 'center' }}
+          />
+          <TextInput
+            keyboardType="decimal-pad"
+            onSubmitEditing={() => focus('fourth')}
+            returnKeyType="next"
+            blurOnSubmit={false}
+            ref={thirdInput}
+            maxLength={1}
+            style={{ borderBottomWidth: 1, textAlign: 'center' }}
+          />
+          <TextInput
+            keyboardType="decimal-pad"
+            onSubmitEditing={() => focus('fifth')}
+            returnKeyType="next"
+            blurOnSubmit={false}
+            maxLength={1}
+            ref={fourthInput}
+            style={{ borderBottomWidth: 1, textAlign: 'center' }}
+          />
+          <TextInput
+            keyboardType="decimal-pad"
+            ref={fifthInput}
+            maxLength={1}
+            style={{ borderBottomWidth: 1, textAlign: 'center' }}
+          />
+        </View>
+
+
+
